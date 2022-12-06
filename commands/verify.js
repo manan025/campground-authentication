@@ -1,6 +1,5 @@
 const axios = require('axios')
 const qs = require('querystring');
-const url = require('url')
 const {SlashCommandBuilder} = require('discord.js');
 
 // dev
