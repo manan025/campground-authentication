@@ -15,11 +15,6 @@ function verify(i) {
     i.editReply("Applied")
      */
 
-    /*
-    send GET request to https://dpsdwarka.com/dpsdwarka/userform/misc/login.asp with header Accept = application/json and
-    body username = username and password = password in form data
-    store the cookie in a variable
-     */
     let cookie;
 
     axios.post('https://dpsdwarka.com/dpsdwarka/userform/misc/login.asp',
@@ -39,16 +34,10 @@ function verify(i) {
         }
     )
         .then((response) => {
-            // save body as a file
             fs.writeFileSync('response.html', response.data);
 
-            // store the cookie in a variable
             cookie = response.headers['set-cookie'];
-            /*
-            Send GET request to https://dpsdwarka.com/dpsdwarka/userform/MyGrpsite.asp
-            set the headers as follows: cookie to the cookie variable and Connection to keep-alive
-            extract the html from the response
-             */
+
             console.log(`${cookie}, cookie final`)
 
             let html;
